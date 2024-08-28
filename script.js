@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Marquee effect for the title
   const originalTitle = document.title;
-  const marqueeText = "Favicon Changer - ";
+  const marqueeText = "";
   let titleIndex = 0;
 
   function updateTitle() {
@@ -27,7 +27,15 @@ document.addEventListener("DOMContentLoaded", function () {
   setInterval(updateTitle, 200); // Update title every 200 milliseconds
 });
 
-let title = document.getElementById("title");
-function changeTitle() {
-  title.innerHTML = "New Title";
+function changeTheme() {
+  const theme = document.getElementById("theme");
+  if (theme.innerHTML == "Dark Mode") {
+    theme.innerHTML = "Light Mode";
+    document.body.style.backgroundColor = "#000";
+    document.body.style.color = "#fff";
+  } else {
+    theme.innerHTML = "Dark Mode";
+    document.body.style.backgroundColor = "#fff";
+    document.body.style.color = "#000";
+  }
 }
